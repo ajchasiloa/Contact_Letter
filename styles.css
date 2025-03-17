@@ -1,150 +1,97 @@
+/* styles.css */
+
 /* Estilos principales para la aplicación */
-.app-container {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background: linear-gradient(135deg, #00A9FF, #FF4F79);
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
     background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
 }
 
-/* Se añade un efecto de textura al fondo */
-.app-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
-    opacity: 0.2;
-    pointer-events: none;
-}
-
-/* Estilos para la barra de navegación */
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #3A4D7A;
-    padding: 10px 0;
-    position: relative;
-    z-index: 1;
-}
-
-/* Estilos para el título dentro de la barra de navegación */
-.navbar h1 {
-    color: white;
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-/* Contenedor flexible para el contenido principal */
-.responsive-wrapper {
+.app-container {
     width: 100%;
-    height: 100vh;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #3A4D7A;
+    padding: 15px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.responsive-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: scale(1);
-    transform-origin: center;
+    flex-wrap: wrap;
     padding: 20px;
-    max-width: 100vw;
 }
 
-/* Estilos específicos para la tarjeta de contacto */
 .contact-card {
     background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 15px;
+    color: white;
+    padding: 20px;
     border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    width: 300px; /* Se redujo el tamaño */
-    max-width: 85%;
-    margin: 10px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
 }
 
-/* Imagen redonda */
-.contact-card img {
-    width: 100px;  /* Tamaño más pequeño */
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #A4FF00;
-}
-
-/* Estilos para el encabezado de la tarjeta de contacto */
 .contact-card h2 {
-    font-size: 1.5rem;
     color: #A4FF00;
-    position: relative;
-    display: inline-block;
-    padding: 5px 15px; /* Menos ancho */
-    transition: color 0.3s ease, border-color 0.3s ease;
-    border: 2px solid transparent;
-    max-width: 80%;
 }
 
-.contact-card h2:hover {
-    color: #A4FF00;
-    border-color: #A4FF00;
-    background-color: transparent;
-}
-
-/* Estilos para los párrafos dentro de la tarjeta de contacto */
 .contact-card p {
-    font-size: 1.2rem; /* Más pequeño */
-    color: #fff;
-}
-
-.contact-card .info p {
     font-size: 1.2rem;
     margin: 8px 0;
-    color: #FFFFFF;
-    font-weight: bold;
-    transition: color 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent;
-    padding: 0 5px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
 }
 
-.contact-card .info p:hover {
-    color: #22ff00;
-    border-color: #A4FF00;
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #A4FF00;
+    object-fit: cover;
 }
 
-/* Estilos específicos para la tarjeta de presentación */
-.presentation-card {
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    width: 250px; /* Se redujo el tamaño */
-    max-width: 80%;
-    margin: 15px auto;
-}
-
-/* Estilos para el pie de página */
 footer {
     background-color: #3A4D7A;
     color: white;
-    text-align: center;
     padding: 10px;
-    margin-top: 30px;
-    border-radius: 0 0 8px 8px;
+    margin-top: 20px;
 }
 
-footer p {
-    font-size: 1rem;
+/* Media Queries para mejor adaptación */
+@media (max-width: 768px) {
+    .contact-card {
+        width: 90%;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        font-size: 1.5rem;
+    }
+
+    .contact-card p {
+        font-size: 1rem;
+    }
 }
